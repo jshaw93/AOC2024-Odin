@@ -27,11 +27,11 @@ main :: proc() {
         append(&grid, utf8.string_to_runes(line, arenaAlloc))
     }
 
-    fmt.println("Part 1:", part1(grid[:], arenaAlloc))
+    fmt.println("Part 1:", part1(grid[:]))
     fmt.println("Part 2:", part2(grid[:]))
 }
 
-part1 :: proc(grid : [][]rune, allocator := context.allocator) -> int {
+part1 :: proc(grid : [][]rune) -> int {
     size : int = len(grid[0])
     total : int = 0
     for i in 0..<size {
